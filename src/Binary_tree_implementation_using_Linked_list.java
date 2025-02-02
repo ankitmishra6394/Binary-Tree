@@ -26,7 +26,32 @@ public class Binary_tree_implementation_using_Linked_list {
         root.right=create();
         return root;
     }
+    static void inorder(Node root){ // LNR
+        if (root==null)
+            return;
+        inorder(root.left); // L
+        System.out.println(root.data); // N
+        inorder(root.right); // R
+    }static void preorder(Node root){ // NLR
+        if (root==null)
+            return;
+        System.out.println(root.data); // N
+        preorder(root.left); // L
+        preorder(root.right); // R
+    }static void postorder(Node root){ // LRN
+        if (root==null)
+            return;
+        postorder(root.left); // L
+        postorder(root.right); // R
+        System.out.println(root.data); // N
+    }
     public static void main(String[] args) {
         Node root = create();
+        preorder(root);
+        System.out.println();
+        postorder(root);
+        System.out.println();
+        inorder(root);
+        System.out.println();
     }
 }
